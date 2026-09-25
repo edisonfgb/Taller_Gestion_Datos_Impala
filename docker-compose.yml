@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  impala:
+    image: mfery/hadoop-impala:latest  
+    container_name: impala_taller
+    hostname: impala-node
+    ports:
+      - "21050:21050"  
+      - "25000:25000"  
+      - "50070:50070"  
+    volumes:
+      - ./data:/user/data  
+    environment:
+      - TZ=America/Bogota
+    deploy:
+      resources:
+        limits:
+          memory: 5G     
