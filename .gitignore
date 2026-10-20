@@ -2,3 +2,9 @@ data/
 *.tsv
 *.csv
 *.parquet
+
+venv/
+
+src/
+
+*.py

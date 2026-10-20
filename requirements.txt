@@ -1,0 +1,8 @@
+pandas>=2.0.0
+impyla>=0.18.0
+thrift>=0.16.0
+thrift-sasl>=0.4.3
+bitarray>=2.9.0
+ibis-framework[impala]>=8.0.0,<9.0.0
+pyspark>=3.4.0
+jupyter>=1.0.0

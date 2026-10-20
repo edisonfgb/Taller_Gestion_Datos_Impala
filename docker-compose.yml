@@ -2,18 +2,17 @@ version: '3.8'
 
 services:
   impala:
-    image: mfery/hadoop-impala:latest  
+    image: apache/kudu:impala-latest
     container_name: impala_taller
     hostname: impala-node
+    command: ["impala"]
     ports:
-      - "21050:21050"  
-      - "25000:25000"  
-      - "50070:50070"  
+      - "21000:21000"  # Puerto impala-shell
+      - "21050:21050"  # Puerto JDBC/ODBC (Python/DBeaver)
+      - "25000:25000"  # Web UI Daemon
+      - "25010:25010"  # Web UI StateStore
+      - "25020:25020"  # Web UI Catalog
     volumes:
-      - ./data:/user/data  
+      - ./data:/user/data
     environment:
       - TZ=America/Bogota
-    deploy:
-      resources:
-        limits:
-          memory: 5G     
